@@ -12,16 +12,24 @@
 }
 h1 {
     text-align: center;
-    color: black;
+    font-size: 30px;
 }
 
 .button {
-    width: 50px;
-    height: 25px;
+    width: 70px;
+    height: 35px;
+    background-color: #ECB365;
+    border: none;
+    border-radius: 5px;
+    font-size: 25px;
 }
 
 .buttonStyles {
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: space-between;
+}
+
+p {
+    font-size: 40px;
 }
