@@ -1,13 +1,16 @@
 import React from 'react';
-import styles from "./NavBar.module.scss"
+import styles from "./NavBar.module.scss";
+import SearchBar from "../SearchBar";
+import FilterList from "../FilterList";
 
-const NavBar = () => {
+const NavBar = (props) => {
+    const {searchtext, setSearchText} = props;
+   
     return (
         <div className = {styles.navbar}>
-            <h2>Search <input></input></h2>
-            <p>High ABV</p>
-            <p>Classic Range</p>
-            <p>Acidic</p>
+            <SearchBar placeholder = "Search for beers..." searchText = {searchtext} setSearchText = {setSearchText}/> 
+            <FilterList />
+           
         </div>
     )
 }

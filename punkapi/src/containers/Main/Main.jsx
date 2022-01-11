@@ -1,25 +1,27 @@
 import React from 'react';
 import styles from "./Main.module.scss";
-import NavBar from "../../components/NavBar";
-import Card from "../../components/Card";
 import beers from "../../data/beers";
 
+import CardList from "../../components/CardList";
+import FilterList from '../../components/FilterList';
 
 
-const Main = () => {
 
-    const getBeerCardJsx = (beer) => (
-        <div className = {styles.card} key={beer.id} >
-          <Card beer={beer}/>
-        </div>
-    
-      );
-    
-    
+const Main = (props) => {
+    const {searchText, filterBeers} = props;
+
+    const matchingBeers = beers.filter((beer) => {
+        const beerName = beer.name.toLowerCase();
+        return beerName.includes(searchText.toLowerCase());
+    })
+
+   
+
     return (
-        <div className = {styles.main}>
-          {beers.map(getBeerCardJsx)}
-        </div>
+        <section className = {styles.main}>
+            <CardList beers = {matchingBeers}/>
+        </section>
+       
     )
 }
 
