@@ -4,43 +4,60 @@ import NavBar from './components/NavBar';
 import Main from "./containers/Main";
 import styles from "./App.module.scss";
 import beers from "./data/beers";
+import CardList from './components/CardList';
 
 
 
 const App = () => {
-  const [searchText, setSearchText] = useState("");
-  const [filterBeers, setFilterBeers] = useState("");
+ 
+  const [beers, setBeers] = useState([]);
+  
 
-  const highABV = beers.filter((beer) => {
-    if (beer.abv > 6) {
-        console.log (beer.name);
-    }
-    
-    
-})
+  const fetchBeers = (searchTerm) => {
+    fetch(`https://api.punkapi.com/v2/beers?beer_name=${searchTerm}`)
+      .then((res) => res.json())
+      .then((jsonResponse) => {
+        setBeers(jsonResponse);
 
-const highAcidity = beers.filter((beer) => {
-  if (beer.ph < 4) {
-    console.log(beer.name);
+      })
+      .catch((err) => {
+        console.error(err);
+      })
   }
-})
 
-const classicBeer = beers.filter((beer) => {
-  let firstBrewedValue = beer.first_brewed;
-  let yearValue = firstBrewedValue.substring(3);
-    if (yearValue < 2010) {
-      console.log(beer.name);
-    }
-})
+  const handleChange = () => {
+    console.log("hello");
+    fetch("https://api.punkapi.com/v2/beers?abv_gt=6.0")
+      .then((res) => res.json())
+      .then((jsonResponse) => {
+        (setBeers(jsonResponse));
 
+      })
+      .catch((err) => {
+        console.error(err);
+      })
+  }
+  
+  
   
   return (
     <div className = {styles.app}>
-      <NavBar searchText = {searchText} setSearchText = {setSearchText}/>
-      <Main searchText = {searchText} filterBeers = {filterBeers} setFilterBeers = {setFilterBeers}/>
+      <NavBar setSearchText = {fetchBeers} beers={beers} handleChange = {handleChange} />
+      <Main beers={beers}/>
     </div>
   );
 }
 
 export default App
+
+
+// const highABV = beers.filter((beer) => {
+//   if (beer.abv > 6) {
+//       return beer.name;
+// }})
+
+// const handleChange = () => {
+//   console.log("hello");
+// }
+
 

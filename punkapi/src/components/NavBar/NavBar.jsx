@@ -4,12 +4,12 @@ import SearchBar from "../SearchBar";
 import FilterList from "../FilterList";
 
 const NavBar = (props) => {
-    const {searchtext, setSearchText} = props;
+    const {setSearchText, beers, handleChange} = props;
    
     return (
         <div className = {styles.navbar}>
-            <SearchBar placeholder = "Search for beers..." searchText = {searchtext} setSearchText = {setSearchText}/> 
-            <FilterList />
+            <SearchBar placeholder = "Search for beers..." setSearchText = {setSearchText} beers={beers}/> 
+            <FilterList beers={beers} handleChange = {handleChange} />
            
         </div>
     )
