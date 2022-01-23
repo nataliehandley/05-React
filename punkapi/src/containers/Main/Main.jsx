@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from "./Main.module.scss";
-import beers from "../../data/beers";
+
 
 import CardList from "../../components/CardList";
 import FilterList from '../../components/FilterList';

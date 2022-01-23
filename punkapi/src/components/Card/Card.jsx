@@ -10,7 +10,7 @@ const Card = (props) => {
     } = props.beer;
 
     const shortenInstructions = (instructions) =>
-    instructions.length < 200
+    instructions.length < 100
       ? instructions
       : instructions.substring(0, 100) + "...";
 

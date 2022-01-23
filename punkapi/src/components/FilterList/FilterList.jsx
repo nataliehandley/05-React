@@ -1,26 +1,23 @@
-import React, {useState} from 'react';
-import FilterItem from "../FilterItem";
-import CardList from '../CardList';
+import React from 'react';
+
+import styles from "./FilterList.module.scss"
+import FilterItemHighABV from "../FilterItemHighABV";
+import FilterItemClassic from '../FilterItemClassic';
+import FilterItemAcidity from '../FilterItemAcidity';
+
 
 const FilterList = (props) => {
 
-    const {handleChange} = props;
+    const {filterHighABV, filterClassic, filterAcidity} = props;
 
     
 
    
     return (
-        <div>
-             <div>
-                <FilterItem handleChange = {handleChange} />
-                <label>
-                    BREWED BEFORE 2010
-                </label>
-                <label>
-                    HIGH ACIDITY
-                </label>
-    </div>
-           
+        <div className = {styles.filter}>
+                <FilterItemHighABV filterHighABV = {filterHighABV} />
+                <FilterItemClassic filterClassic = {filterClassic} />
+                <FilterItemAcidity filterAcidity = {filterAcidity} />
         </div>
     )
 

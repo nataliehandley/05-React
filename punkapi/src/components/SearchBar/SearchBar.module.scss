@@ -1,15 +1,16 @@
 @import "../../variables.scss";
 .search {
+    
     input {
-      height: 100%;
-      width: 100px;
+      
+      width: 100%;;
       vertical-align: top;
-      margin-right: $base-spacing * 2;
       font-size: 15px;
-      // padding-left: $base-spacing;
-      border: none;
-      border-bottom: $primary-border;
+      background-color: #F5F5F5;
+      border-radius: 5px;
+      border: 2px solid #4FAFC1;
       color: $primary-color;
+      padding: 10px;
   
       &:focus {
         outline: none;
@@ -18,7 +19,7 @@
       }
   
       &::placeholder {
-        color: $tertiary-text;
+        color: darkgray;
       }
     }
   
@@ -33,7 +34,7 @@
   @media only screen and (min-width: 768px) {
     .search {
       input {
-        width: unset;
+        
         font-size: 20px;
       }
     }

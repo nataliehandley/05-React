@@ -2,24 +2,26 @@
 
 .card {
     height: 500px;
-    width: 250px;
-    border: 2px solid $primary-color;
-    border-radius: 5px;
-    padding: 10px;
-    margin: 10px;
+    width: 310px;
+    border-radius: 10px;
+    padding: 30px 10px 10px 10px;
+    margin: 5px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-evenly;
+    background-color: #F5F5F5;
+    
+  
 
   img {
     height: 60%;
-    width: 60%;
+    width: 35%;
     border-radius: 2px 2px 0 0;
   }
 
   .info {
-    height: 50%;
+    height: 40%;
     width: 85%;
     padding: $base-spacing * 2;
     border-top: none;
@@ -31,16 +33,18 @@
     
 
     h2 {
-      color: $primary-color;
-      font-size: 20px;
+      color: black;
+      font-size: 30px;
+      font-family: 'Yanone Kaffeesatz', sans-serif;
       white-space: nowrap;
-      overflow: hidden;
       text-overflow: ellipsis;
       text-align: center;
+      text-transform: uppercase;
+      padding: 20px;
     }
 
     p {
-      color: $secondary-text;
+      color: #4FAFC1;
       margin-bottom: $base-spacing * 2;
       
     }
