@@ -6,9 +6,9 @@
       width: 100%;;
       vertical-align: top;
       font-size: 15px;
-      background-color: #F5F5F5;
+      background-color: $tertiary-color;
       border-radius: 10px;
-      border: 4px solid #4FAFC1;
+      border: 4px solid $primary-color;
       color: $primary-color;
       padding: 10px;
   
@@ -19,7 +19,7 @@
       }
   
       &::placeholder {
-        color: darkgray;
+        color: $secondary-color;
       }
     }
   
