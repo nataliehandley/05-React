@@ -15,7 +15,7 @@ const CardList = (props) => {
     return (
         <div>
             <div className = {styles.main}>
-            {beers.map(getBeerCardJsx)}
+            {beers.map(getBeerCardJsx) }
              </div> 
         </div>
     )

@@ -17,10 +17,10 @@ function App() {
   };
   return (
     <div className= {styles.app}>
-      <button onClick={getCatFacts}>Fetch Cat Facts</button>
-      <ul>
+      <button className = {styles.button} onClick={getCatFacts} >Tell me 10 facts about Cats!</button>
+      <ul className = {styles.list}>
         {catFacts.map((catFact) => {
-          return <li>{catFact.fact}</li>;
+          return <li key= {catFact.fact} >{catFact.fact} </li>;
         })}
       </ul>
     </div>

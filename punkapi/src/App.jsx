@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 
 import NavBar from './components/NavBar';
 import Main from "./containers/Main";
@@ -11,6 +11,16 @@ const App = () => {
  
   const [beers, setBeers] = useState([]);
   
+  const getBeers = () => {
+    fetch("https://api.punkapi.com/v2/beers")
+      .then((res) => res.json())
+      .then((jsonResponse) => {
+        setBeers(jsonResponse);
+      })
+      .catch((err) => {
+        console.error(err);
+      })
+  }
 
   const fetchBeers = (searchTerm) => {
     fetch(`https://api.punkapi.com/v2/beers?beer_name=${searchTerm}`)
@@ -21,8 +31,16 @@ const App = () => {
       })
       .catch((err) => {
         console.error(err);
-      })
+      });
+
   }
+
+  useEffect(() => {
+    console.log("hello");
+    getBeers();
+  }, [])
+
+  
 
   const filterHighABV = () => {
     fetch("https://api.punkapi.com/v2/beers?abv_gt=6.0")
